@@ -3,13 +3,13 @@
     "compatibility": [
         2
     ],
-    "description": "Notifications through Apprise",
+    "description": "Send notification through apprise on task completion.",
     "icon": "",
     "id": "apprise_notifier",
     "name": "Apprise Notifier",
     "priorities": {
         "on_postprocessor_task_results": 0
     },
-    "tags": "",
-    "version": "0.0.1"
+    "tags": "post-processor,notify,apprise",
+    "version": "0.0.2"
 }

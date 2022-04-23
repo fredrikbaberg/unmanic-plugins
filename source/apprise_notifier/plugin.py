@@ -13,15 +13,20 @@ logger = logging.getLogger("Unmanic.Plugin.apprise_notifier")
 
 class Settings(PluginSettings):
     settings = {
-        "Apprise file": "",
+        'Discord Webhook': '',
+        'Notify on Task Failure?': False,
     }
 
     def __init__(self, *args, **kwargs):
         super(Settings, self).__init__(*args, **kwargs)
 
 def notify():
+    """
+    Send notification using Apprise.
+    """
     apobj = apprise.Apprise()
-    logger.info("Send notification through AppRise".format())
+    data = 'Notification data.'
+    logger.info("Sent notification ({}) through Apprise.".format(data))
 
 def on_postprocessor_task_results(data):
     """
@@ -38,7 +43,14 @@ def on_postprocessor_task_results(data):
     :return:
     
     """
-    if data.get('task_processing_success') and data.get('task_processing_success'):
-        notify(data.get('source_data'))
+    if data.get('library_id'):
+        settings = Settings(library_id=data.get('library_id'))
+    else:
+        settings = Settings()
+
+    if not data.get('task_processing_success') and not settings.get_setting('Notify on Task Failure?'):
+        return data
+
+    notify()
 
     return data
