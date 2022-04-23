@@ -38,6 +38,7 @@ def on_postprocessor_task_results(data):
     :return:
     
     """
+    if data.get('task_processing_success') and data.get('task_processing_success'):
+        notify(data.get('source_data'))
 
-    notify()
-    return
+    return data
