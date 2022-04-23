@@ -1,0 +1,15 @@
+{
+    "author": "fredrikbaberg",
+    "compatibility": [
+        2
+    ],
+    "description": "Notifications through Apprise",
+    "icon": "",
+    "id": "apprise_notifier",
+    "name": "Apprise Notifier",
+    "priorities": {
+        "on_postprocessor_task_results": 0
+    },
+    "tags": "",
+    "version": "0.0.1"
+}
