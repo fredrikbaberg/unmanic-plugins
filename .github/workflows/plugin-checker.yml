@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - 'official'
-      - 'master'
+      - 'main'
 
 jobs:
 
@@ -209,7 +209,7 @@ jobs:
 
     # Deploy to repo branch
     - name: Deploy repository
-      if: success() && (github.ref == 'refs/heads/master')
+      if: success() && (github.ref == 'refs/heads/main')
       uses: s0/git-publish-subdir-action@develop
       env:
         REPO: self
