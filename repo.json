@@ -1,0 +1,26 @@
+{
+    "repo": {
+        "id": "repository.fredrikbaberg",
+        "name": "fredrikbaberg Unmanic-plugins",
+        "icon": "",
+        "repo_data_directory": "https://raw.githubusercontent.com/fredrikbaberg/unmanic-plugins/repo/",
+        "repo_data_url": "https://raw.githubusercontent.com/fredrikbaberg/unmanic-plugins/repo/repo.json"
+    },
+    "plugins": [
+        {
+            "author": "fredrikbaberg",
+            "compatibility": [
+                2
+            ],
+            "description": "Send notifications through Apprise",
+            "icon": "",
+            "id": "notify_apprise",
+            "name": "Notify Apprise",
+            "priorities": {
+                "on_postprocessor_task_results": 0
+            },
+            "tags": "apprise,notifications",
+            "version": "0.0.1"
+        }
+    ]
+}
